@@ -1,0 +1,39 @@
+<h3>Premium Calculator</h3>
+<div>
+  <div class="row">
+    <div class="form-group">
+      <label for="pName">Name</label>
+      <input type="text" id="pName" class="form-control" name="pName" [(ngModel)]="personName" required/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="pAge">Age</label>
+      <input type="text" id="pAge" class="form-control" name="pAge" [(ngModel)]="personAge" required/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="pDob">Date of Birth</label>
+      <input type="text" id="pDob" class="form-control" name="pDob" [(ngModel)]="personDob" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="pSumInsured">Death – Sum Insured</label>
+      <input type="text" id="pSumInsured" class="form-control" name="pSumInsured" [(ngModel)]="sumInsured" required/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="pOccupation">Occupation</label>
+      <select class="form-control" [(ngModel)]="personOccupation" (change)="onOccupationChange()" >
+        <option *ngFor="let occupation of occupations" [value]="occupation.rating">{{occupation.occupation}}</option>
+      </select>
+    </div>
+  </div>
+    <hr />
+  <div class="row">
+      <p>Calculated Premium : {{premium }}</p>
+  </div>
+</div>
